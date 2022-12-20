@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        .main
+        {
+          display:flex;
+          width: 100%;
+          height:100%;
+        }
+        .container
+        { 
+            position:relative;
+            padding: 0%;
+            margin-top:0.5rem;
+            width: 80%;
+            height:90vh;
+            overflow-y:auto;
+            border:3px solid black;
+            border-bottom:none;
+            outline: none;
+            border-radius: 0.2rem;
+        }
+        .header1
+        {
+           /* z-index: 300; */
+            /* display: flex; */
+            text-align: center;
+            /* justify-content: center;
+            align-items: center; */
+            width:68.81rem;
+            height:auto;
+            background-color: rgb(255, 197, 50);
+            /* border: 3px solid rgb(161, 159, 159); */
+            position: fixed;
+            top:0.001rem;
+        }
+        .header1,h1
+        {
+          color:black;
+          font-size:4rem;
+        }
+        .timer
+        {
+          padding-left:22rem;
+          display: flex;
+          justify-content: flex-end;
+        }
+       
+        .question
+        {
+          margin-top:12rem;
+          margin-left:3rem;
+        }
+        .question ul li
+        {
+          font-size:1rem;
+        }
+        li h4
+        {
+          font-size: 1rem;
+        }
+        .radio
+        {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        input
+        {
+          width: 1rem;
+          height:4rem;
+        }
+        input
+        {
+          border:2px solid white;
+          accent-color: red
+        }
+        .radiobtn
+        {
+          display: flex;
+          flex-direction: row;
+          align-items:center;
+        }
+        .radiobtn h6
+        {
+          margin-left:0.5rem;
+          font-weight: 400;
+        }
+        .formbtn
+        {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          margin: 0.5rem;
+        }
+        .formbtn .btn1
+        {
+          flex-grow: 0.2;
+        }
+        .formbtn .btn2
+        {
+          flex-grow: 0.2;
+        }
+
+    </style>
+    <script>
+      // var x=59;
+      // var y=4;
+      // var counter=0;
+      //  var time=setInterval(
+      //  function checkTime()
+      //  {
+      //     // var t=document.getElementById("time").innerHTML="0"+y+""+":"+x;
+      //     x--;
+      //     if(x<0)
+      //     {
+      //       clearTimeout(time);
+      //     }
+      //  } ,1000);
+
+     
+      function checkAnswer()
+      {
+        
+        var wrong=0,counter=0;
+
+
+        var x=document.getElementsByName("btn");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value==8)
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        var x=document.getElementsByName("btn1");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value=="The reference of array")
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        var x=document.getElementsByName("btn2");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value=="Objects")
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        var x=document.getElementsByName("btn3");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value=="At the run time")
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        var x=document.getElementsByName("btn4");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value=="java.lang.Object")
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        var x=document.getElementsByName("btn5");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value=="And int values")
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        var x=document.getElementsByName("btn6");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value=="java.lang")
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        var x=document.getElementsByName("btn7");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value==13)
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        var x=document.getElementsByName("btn8");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value==3.0)
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        var x=document.getElementsByName("btn4");
+        for(i=0;i<x.length;i++)
+        {
+          if(x[i].checked)
+          {
+            if(x[i].value=="Interface")
+            {
+              counter+=10;
+            }
+            else
+            {
+              wrong++;
+            }
+          }
+        }
+        alert(counter);
+        }
+    </script>
+  </head>
+  <body>
+    <!-- <form action="checkanswer.php" method="post"> -->
+      <form>
+    <div class="main">
+        <div class="container">
+            <div class="header1"><h1>Quiz Test </h1><div class="timer" ></div></div>
+            <div class="question">
+              <ul>                
+                <li type="1"><h4>Number of primitive data types in Java are </h4></li>
+                <!-- 8 -->
+                <div class="radio">
+                  <div class="radiobtn"><input type="radio" name="btn"  value="6"required />6</div>
+                  <div class="radiobtn"><input type="radio" name="btn"  value="7"required />7</div>
+                  <div class="radiobtn"><input type="radio" name="btn"  value="8" required />8</div>
+                  <div class="radiobtn"><input type="radio" name="btn"  value="9"required />9</div>
+                </div>
+                <li type="1"><h4>When an array is passed to a method , what does the method recieve</h4></li>
+                <div class="radio">
+                  <!-- The reference of the array -->
+                  <div class="radiobtn"><input type="radio" name="btn1" required value="The reference of array"/><h6>The reference of array</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn1" required value="A copy of the array"/><h6>A copy of the array</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn1" required value="Length of the array" /><h6>Length of the array</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn1" required value="Copy of first element"/><h6>Copy of first element</h6></div>
+                </div>
+                <li type="1"><h4>Array in java are</h4></li>
+                <!-- Objects -->
+                <div class="radio">
+                  <div class="radiobtn"><input type="radio" name="btn2"required value="Object references"/><h6>Object references</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn2"required value="Objects" /><h6>Objects</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn2"required value="Primitive data type"/><h6>Primitive data type</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn2"required value="None"/><h6>None</h6></div>
+                </div>
+                <li type="1"><h4>When is the object is created with new keyword</h4></li>
+                <!-- At the run time -->
+                <div class="radio">
+                 <div class="radiobtn"><input type="radio"  name="btn3" required value="At the run time"  /><h6>At the run time</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn3" required value="At compile time"/><h6>At compile time</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn3" required value="Depends on the code"/><h6>Depends on the code</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn3" required value="none"/><h6>None</h6></div>
+                </div>
+                <li type="1"><h4>In which of the following is toString() method defined?</h4></li>
+                <!-- java.lang.Object -->
+                <div class="radio">
+                 <div class="radiobtn"><input type="radio"  name="btn4" required value="java.lang.Object"  /><h6>java.lang.Object</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn4" required value="java.lang.Strin"/><h6>java.lang.String</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn4" required value="java.lang.util"/><h6>java.lang.util</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn4" required value="None"/><h6>None</h6></div>
+                </div>
+                <li type="1"><h4>compareTo() returns</h4></li>
+                <!-- And int values -->
+                <div class="radio">
+                 <div class="radiobtn"><input  type="radio" name="btn5" required value="True" /><h6>True</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn5" required value="False"/><h6>False</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn5" required value="And int values"/><h6>And int values</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn5" required value="none"/><h6>none</h6></div>
+                </div>
+                <li type="1"><h4>To which of the following does the class string belong to</h4></li>
+                <!-- java.lang -->
+                <div class="radio">
+                  <div class="radiobtn"><input type="radio" name="btn6"required value="java.lang"/><h6>java.lang</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn6"required value="java.awt"/><h6>java.awt</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn6"required value="java.applet"/><h6>java.applet</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn6"required value="java.string"/><h6>java.string</h6></div>
+                </div>
+                <li type="1"><h4>Total contructor string class have</h4></li>
+                <!-- 13 -->
+                <div class="radio">
+                  <div class="radiobtn"><input type="radio" name="btn7" required  value="3"/><h6>3</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn7" required  value="7"/><h6>7</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn7" required  value="13"/><h6>13</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn7" required  value="20"/><h6>20</h6></div>
+                </div>
+                <li type="1"><h4>Output of Math.floor(3,6)?</h4></li>
+                <!-- 3.0 -->
+                <div class="radio">
+                  <div class="radiobtn"><input type="radio" name="btn8" required  value="3"/><h6>3</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn8" required  value="3.0"/><h6>3.0</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn8" required  value="4"/><h6>4</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn8" required  value="4.0"/><h6>4.0</h6></div>
+                </div>
+                <li type="1"><h4>What is Runnable</h4></li>
+                <!-- Interface -->
+                <div class="radio">
+                  <div class="radiobtn"><input type="radio" name="btn9" required value="Abtract class"/><h6>Abtract class</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn9" required value="Interface" /><h6>Interface</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn9" required value="Class"/><h6>Class</h6></div>
+                  <div class="radiobtn"><input type="radio" name="btn9" required value="Method"/><h6>Method</h6></div>
+                </div>
+              </ul>
+            </div>
+        </div>     
+    </div>
+    <div class="formbtn">
+      <button class="btn1 btn btn-danger" type="reset">Reset</button>
+      <button class="btn2 btn btn-success" onclick="checkAnswer()">Submit</button>
+    </div>    
+  </div>
+  
+</form>
+
+  </body>
+  <div class="formbtn">
+  <button class="btn2 btn btn-primary" type="button" ><a style="color:white;text-decoration:none" href="Editable.html">Customize Quiz</a></button>
+</div>
+</html>
+
+
+
+
